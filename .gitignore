@@ -2,3 +2,7 @@
 UserSettings
 Temp
 Logs
+obj
+.idea
+*.csproj
+*.sln
