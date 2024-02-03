@@ -1,0 +1,617 @@
+fileFormatVersion: 2
+guid: 07df12dea0ee97c489194785ff719198
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: crops._14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 613
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07baafff2995914f9bec0a84e451214
+      internalID: -372923402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._15
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 611
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08b551a814ba254589ece185100b023
+      internalID: -1211402173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._16
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 612
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd8c1943a4f40546a9cfaa19239757c
+      internalID: -1045192050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._17
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 614
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a05b4abf7900b34a881bf8aabdd9922
+      internalID: 797019445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._18
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 613
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102dedcb14fa1d141951b0bc0d278f9e
+      internalID: 251636793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._19
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 613
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcbf12bf5fbb74e499c5d4327c9bd3f4
+      internalID: -646122442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._20
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 611
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312e1004292e2f942ad155fc69b66b21
+      internalID: 2134436785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 611
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103cb0d932eb13e49a04a02ad1bf7042
+      internalID: 964954350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 609
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6762b880763c614e8992e32b1016d7e
+      internalID: 674602676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops._234
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 65
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4478fe8b124ceb747b32d3356e5eeee7
+      internalID: 1829067720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 97
+        width: 48
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf70cd616cf4f0469f79dec11e29a4a
+      internalID: 1466781303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      crops._192: 1213275695
+      crops._79: 1740305602
+      crops._254: -867505416
+      crops._162: 1486523639
+      crops._173: 839218383
+      crops._178: 1502894461
+      crops._75: 1516201235
+      crops._59: 574641995
+      crops._16: -1045192050
+      crops._86: -2095216092
+      crops._129: -1529829917
+      crops._9: -1496312844
+      crops._130: 1052099689
+      crops._111: -85832210
+      crops._124: 1081939799
+      crops._61: 277006744
+      crops._82: 1119420027
+      crops._161: 1445426920
+      crops._64: 337651893
+      crops._45: 196303650
+      crops._169: 1692402341
+      crops._135: -1493327363
+      crops._66: 2047519913
+      crops._93: -578931616
+      crops._168: -641570359
+      crops._181: 1825722719
+      crops._204: 1829462928
+      crops._108: 407801506
+      crops._47: 392187502
+      crops._78: 1706975249
+      crops._246: -852448958
+      crops._223: -1721090673
+      crops._197: 1063584087
+      crops._4: 1169979663
+      crops._151: -711680230
+      crops._243: 957860177
+      crops._35: 38463969
+      crops._125: -1530830899
+      crops._32: 983102971
+      crops._152: 276169563
+      crops._234: 1829067720
+      crops._208: 68390913
+      crops._255: -1538583681
+      crops._49: 497800761
+      crops._207: -1635205660
+      crops._57: -1858210839
+      crops._67: 1640559915
+      crops._214: 1415752642
+      crops._112: 1620771909
+      crops._51: 504567141
+      crops._118: -92558466
+      crops._239: 2132690752
+      crops._226: 1833853118
+      crops._247: -433736818
+      crops._252: -1603135083
+      crops._202: -647764663
+      crops._19: -646122442
+      crops._126: -791617354
+      crops._62: -653069705
+      crops._7: 1881851658
+      crops._55: -1509590754
+      crops._188: 656939983
+      crops._37: 50224123
+      crops._103: 1530895193
+      crops._209: 1727209708
+      crops._222: 1568686292
+      crops._98: 731441577
+      crops._100: 1826213202
+      crops._184: 870070521
+      crops._196: -827867245
+      crops._119: 1181910408
+      crops._186: -1178764540
+      crops._33: 80661331
+      crops._136: 2093856914
+      crops._140: 429678590
+      crops._22: 674602676
+      crops._210: 496105538
+      crops._34: 679988216
+      crops._240: 1059123110
+      crops._256: -825079146
+      crops._0: -1540110985
+      crops._113: 460292702
+      crops._144: 869465117
+      crops._172: 461650890
+      crops._85: -2023673745
+      crops._260: -413951538
+      crops._58: -1433005824
+      crops._128: -365751765
+      crops._71: 1833412150
+      crops._132: -212774033
+      crops._228: -468469368
+      crops._36: -297335208
+      crops._121: -372273925
+      crops._69: -1012723147
+      crops._150: -69191063
+      crops._167: 704795405
+      crops._195: -941807524
+      crops._25: -398741895
+      crops._68: -275754068
+      crops._105: -1718923361
+      crops._155: -146679826
+      crops._227: -896966074
+      crops._229: -203403481
+      crops._149: 1723057891
+      crops._249: -2000602809
+      crops._70: -925769365
+      crops._27: -1549314390
+      crops._30: -1632849885
+      crops._182: -380580422
+      crops._31: 1798476857
+      crops._20: 2134436785
+      crops._46: -1802965169
+      crops._258: 201519198
+      crops._139: -96082795
+      crops._219: -874675209
+      crops._183: -656634245
+      crops._253: 1488744024
+      crops._216: -1591985149
+      crops._237: -840265226
+      crops._88: -771785650
+      crops._6: 511552678
+      crops._171: -1929266830
+      crops._175: 984300602
+      crops._157: 1078818506
+      crops._97: -313846569
+      crops._24: -1084078462
+      crops._165: -1012435621
+      crops._77: -545160900
+      crops._232: 1454371569
+      crops._189: -45524802
+      crops._261: -2055291273
+      crops._17: 797019445
+      crops._145: -194103364
+      crops._101: 459871164
+      crops._235: 1792009293
+      crops._160: -242667320
+      crops._109: -1990333613
+      crops._163: 1806871693
+      crops._107: 372819096
+      crops._48: -1706764589
+      crops._164: 579007735
+      crops._190: 1623443524
+      crops._95: 1967256023
+      crops._199: 941316594
+      crops._217: 871630121
+      crops._230: -782332285
+      crops._87: -1478154226
+      crops._52: -1854538287
+      crops._131: -1269078633
+      crops._166: -2079973303
+      crops._233: -975395563
+      crops._211: 1611055087
+      crops._156: -455881249
+      crops._179: 2114763801
+      crops._123: -1493976606
+      crops._244: -47418818
+      crops._38: 197089129
+      crops._251: 255639488
+      crops._138: 994181436
+      crops._53: -1121797416
+      crops._194: -1589587316
+      crops._236: -934787622
+      crops._218: -1481206014
+      crops._5: 1135286015
+      crops._10: -817203274
+      crops._206: 745801712
+      crops._13: 1290132129
+      crops._174: 403797381
+      crops._65: 327402422
+      crops._221: 1022906673
+      crops._74: 991183825
+      crops._225: -999998064
+      crops._215: -1242553637
+      crops._8: -1016439954
+      crops._44: -618137341
+      crops._102: -769928252
+      crops._90: 730986938
+      crops._245: -1694238128
+      crops._176: 341697679
+      crops._83: 1030775406
+      crops._213: -1773968014
+      crops._1: 1177450309
+      crops._43: -920179597
+      crops._18: 251636793
+      crops._115: 635158278
+      crops._212: -1875565333
+      crops._159: 922814960
+      crops._94: -130433836
+      crops._114: -1421929279
+      crops._28: 272916121
+      crops._201: -302281777
+      crops._76: 978771732
+      crops._146: 796832183
+      crops._154: -1198453179
+      crops._3: -644691234
+      crops._248: -1071893665
+      crops._242: -76084018
+      crops._200: 1794769494
+      crops._11: -506049597
+      crops._99: -604123940
+      crops._80: -2014434894
+      crops._127: -628956941
+      crops._203: 1472254566
+      crops._148: -1453012569
+      crops._185: 1782630818
+      crops._180: -728749608
+      crops._29: -1908896850
+      crops._26: -1581706078
+      crops._141: -1868030753
+      crops._241: 461628023
+      crops._106: 539603284
+      crops._14: -372923402
+      crops._56: -592106133
+      crops._73: 338225793
+      crops._50: 1889426300
+      crops._117: -317398438
+      crops._40: -460516164
+      crops._92: -1889116290
+      crops._120: -1104041213
+      crops._60: -1051018689
+      crops._205: 1591875210
+      crops._231: -2072641389
+      crops._143: -772468275
+      crops._133: 1748537315
+      crops._116: 681261804
+      crops._84: 444151775
+      crops._41: 506112404
+      crops._110: 1750566407
+      crops._153: 215713393
+      crops._224: -655494654
+      crops._158: 988129459
+      crops._63: -2145950862
+      crops._259: -2083262980
+      crops._89: -273914664
+      crops._191: 739971056
+      crops._193: -1507984356
+      crops_0: 1466781303
+      crops._54: 916206591
+      crops._39: 1629622498
+      crops._12: -197621804
+      crops._142: 1626040900
+      crops._198: 911481832
+      crops._170: 673132746
+      crops._104: 1366346760
+      crops._187: 289572176
+      crops._42: 445999336
+      crops._262: -646746880
+      crops._81: -939031632
+      crops._21: 964954350
+      crops._96: -1534947275
+      crops._122: -871943909
+      crops._220: -1892050688
+      crops._2: -472827007
+      crops._91: -753533917
+      crops._72: 1802961419
+      crops._238: 1457014668
+      crops._137: 1603700086
+      crops._257: 210643555
+      crops._250: 638938042
+      crops._15: -1211402173
+      crops._147: 2076086303
+      crops._177: -1102188503
+      crops._23: -132299682
+      crops._134: 1345342562
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
