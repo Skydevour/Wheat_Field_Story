@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bottom
+    uniqueID: 579554329
+    locked: 0
+  - name: Middle
+    uniqueID: 2128641729
+    locked: 0
+  - name: Top
+    uniqueID: 2831485771
+    locked: 0
+  - name: Dig
+    uniqueID: 2830063719
+    locked: 0
+  - name: Water
+    uniqueID: 1119323053
+    locked: 0
+  - name: Player
+    uniqueID: 1005811793
+    locked: 0
