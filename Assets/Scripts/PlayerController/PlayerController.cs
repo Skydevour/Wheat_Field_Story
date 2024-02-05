@@ -7,6 +7,8 @@ namespace PlayerController
     {
         [SerializeField] private Rigidbody2D playerRigidBody;
         [SerializeField] private float playerSpeed;
+        [SerializeField] private Animator[] playerAnimators;//人物身上得所有animtor;
+        
         private float inputX;
         private float inputY;
         private Vector2 movementInput;//输入得二维向量；
@@ -15,6 +17,7 @@ namespace PlayerController
         void Update()
         {
             PlayerInput();
+            SwitchAnimation();
         }
 
         private void FixedUpdate()
@@ -27,12 +30,12 @@ namespace PlayerController
         /// </summary>
         private void PlayerInput()
         {
-            if (inputY==0)
+            if (inputY == 0)
             {
                 inputX = Input.GetAxisRaw("Horizontal");
             }
 
-            if (inputX==0)
+            if (inputX == 0)
             {
                 inputY = Input.GetAxisRaw("Vertical");
             }
@@ -47,6 +50,22 @@ namespace PlayerController
         private void Movement()
         {
             playerRigidBody.MovePosition(playerRigidBody.position + movementInput * playerSpeed * Time.deltaTime);
+        }
+
+        /// <summary>
+        /// 转换人物动画
+        /// </summary>
+        private void SwitchAnimation()
+        {
+            foreach (var playerAnimator in playerAnimators)
+            {
+                playerAnimator.SetBool("IsMoving", isMoving);
+                if (isMoving)
+                {
+                    playerAnimator.SetFloat("InputX", inputX);
+                    playerAnimator.SetFloat("InputY", inputY);
+                }
+            }
         }
     }
 }
