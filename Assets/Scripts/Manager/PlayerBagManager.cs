@@ -14,15 +14,16 @@ public class PlayerBagManager : MonoSingleton<PlayerBagManager>
         return ItemDataList.ItemDetailsList.Find(i => i.ItemID == itemId);
     }
 
+    // 往背包添加物品，并设置该物品是一次性拾取还是可永久性拾取
     public void AddItem(PlayerBagItem item, bool isDelete)
     {
         // 背包满了，无法继续装新物品
-        if (!CheckBagHaveEmptySpace())
+        if (!CheckBagCanPutItem(item.itemId))
         {
             Debug.Log("背包已满，无法继续拾取物品！！！");
             return;
         }
-
+        
         var index = GetItemIndex(item.itemId);
         AddItemAtIndex(item.itemId, index, 1);
         if (isDelete)
@@ -70,11 +71,13 @@ public class PlayerBagManager : MonoSingleton<PlayerBagManager>
         return -1;
     }
 
-    private bool CheckBagHaveEmptySpace()
+    private bool CheckBagCanPutItem(int itemId)
     {
         for (int i = 0; i < PlayerBagItemDataList.PlayerBagItemDetailsList.Count; i++)
         {
-            if (PlayerBagItemDataList.PlayerBagItemDetailsList[i].ItemID == 0)
+            // 有空位，或者物品已经放过
+            if (PlayerBagItemDataList.PlayerBagItemDetailsList[i].ItemID == 0 ||
+                PlayerBagItemDataList.PlayerBagItemDetailsList[i].ItemID == itemId)
             {
                 return true;
             }
