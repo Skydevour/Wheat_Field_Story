@@ -13,5 +13,13 @@ MonoBehaviour:
   m_Name: PlayerBagItemDataList
   m_EditorClassIdentifier: 
   PlayerBagItemDetailsList:
-  - Item_ID: 0
-    Item_Count: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0

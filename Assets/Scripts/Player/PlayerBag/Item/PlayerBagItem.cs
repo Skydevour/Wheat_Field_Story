@@ -5,10 +5,11 @@ public class PlayerBagItem : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private BoxCollider2D itemCollider2D;
-    [SerializeField] private int itemId;
-    [SerializeField] private Data.ItemDetails itemDetail;
 
     private Sprite sprite;
+
+    public int itemId;
+    public Data.ItemDetails itemDetail;
 
     private void Awake()
     {
