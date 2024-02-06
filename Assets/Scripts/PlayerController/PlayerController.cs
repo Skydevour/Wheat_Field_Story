@@ -17,7 +17,7 @@ namespace PlayerController
         void Update()
         {
             PlayerInput();
-            SwitchAnimation();
+            SwitchPlayerAnimation();
         }
 
         private void FixedUpdate()
@@ -55,7 +55,7 @@ namespace PlayerController
         /// <summary>
         /// 转换人物动画
         /// </summary>
-        private void SwitchAnimation()
+        private void SwitchPlayerAnimation()
         {
             foreach (var playerAnimator in playerAnimators)
             {
