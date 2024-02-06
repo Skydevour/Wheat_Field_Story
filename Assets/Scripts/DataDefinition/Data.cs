@@ -5,7 +5,7 @@ public class Data
     [System.Serializable]
     public class ItemDetails // 物品详细信息
     {
-        public int ItemID;
+        public int ItemID; // 物品id
         public string ItemName;
         public Enums.ItemType ItemType;
         public Sprite ItemIcon;
@@ -22,7 +22,7 @@ public class Data
     [System.Serializable]
     public struct PlayerBagItemDetails
     {
-        public int ItemID;
+        public int ItemID; // 物品id
         public int ItemCount;
     }
 }
