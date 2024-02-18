@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using CommonFramework.Runtime;
@@ -7,6 +8,12 @@ public class PlayerBagManager : MonoSingleton<PlayerBagManager>
 {
     public ItemDataList ItemDataList; // 物品数据
     public PlayerBagItemDataList PlayerBagItemDataList; // 背包数据
+
+    public void Start()
+    {
+        EventCenter.TriggerEvent(new UpdatePlayerBagEvent(Enums.BagLocation.Player,
+            PlayerBagItemDataList.PlayerBagItemDetailsList));
+    }
 
     // 根据物品id，返回对应物品详细列表
     public Data.ItemDetails GetItemDetails(int itemId)

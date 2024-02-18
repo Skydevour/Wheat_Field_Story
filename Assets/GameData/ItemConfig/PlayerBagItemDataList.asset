@@ -13,6 +13,62 @@ MonoBehaviour:
   m_Name: PlayerBagItemDataList
   m_EditorClassIdentifier: 
   PlayerBagItemDetailsList:
+  - ItemID: 1001
+    ItemCount: 1
+  - ItemID: 1002
+    ItemCount: 1
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 1001
+    ItemCount: 5
+  - ItemID: 1002
+    ItemCount: 3
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
   - ItemID: 0
     ItemCount: 0
   - ItemID: 0
