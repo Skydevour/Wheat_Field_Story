@@ -8,27 +8,32 @@ using UnityEngine.UI;
 public class PlayerBagUI : MonoBehaviour
 {
     [SerializeField] private bool isOpen;
-    [SerializeField] private GameObject BagUI;
-    [SerializeField] private Slot[] PlayerSlots;
+    [SerializeField] private GameObject bagUI;
+    [SerializeField] private Slot[] playerSlots;
+    [SerializeField] private ItemTip itemTip;
 
     private void OnEnable()
     {
         EventCenter.StartListenToEvent<UpdatePlayerBagEvent>(UpdatePlayerBag);
+        EventCenter.StartListenToEvent<ShowItemTipEvent>(ShowTip);
+
     }
 
     private void OnDisable()
     {
         EventCenter.StopListenToEvent<UpdatePlayerBagEvent>(UpdatePlayerBag);
+        EventCenter.StopListenToEvent<ShowItemTipEvent>(ShowTip);
+
     }
 
     private void Start()
     {
-        for (int i = 0; i < PlayerSlots.Length; i++)
+        for (int i = 0; i < playerSlots.Length; i++)
         {
-            PlayerSlots[i].SlotIndex = i;
+            playerSlots[i].SlotIndex = i;
         }
 
-        isOpen = BagUI.activeInHierarchy;
+        isOpen = bagUI.activeInHierarchy;
     }
 
     private void Update()
@@ -44,16 +49,16 @@ public class PlayerBagUI : MonoBehaviour
         switch (evt.Location)
         {
             case Enums.BagLocation.Player:
-                for (int i = 0; i < PlayerSlots.Length; i++)
+                for (int i = 0; i < playerSlots.Length; i++)
                 {
                     if (evt.List[i].ItemCount > 0)
                     {
                         var itemDetail = PlayerBagManager.Instance.GetItemDetails(evt.List[i].ItemID);
-                        PlayerSlots[i].UpdateSlot(itemDetail, evt.List[i].ItemCount);
+                        playerSlots[i].UpdateSlot(itemDetail, evt.List[i].ItemCount);
                     }
                     else
                     {
-                        PlayerSlots[i].UpdateEmptySlot();
+                        playerSlots[i].UpdateEmptySlot();
                     }
                 }
 
@@ -65,15 +70,25 @@ public class PlayerBagUI : MonoBehaviour
         }
     }
 
+    private void ShowTip(ShowItemTipEvent evt)
+    {
+        if (evt.IsShow)
+        {
+            itemTip.SetTip(evt.SlotBag.SlotItemDetails, evt.SlotBag.SlotType);
+        }
+
+        itemTip.gameObject.SetActive(evt.IsShow);
+    }
+
     private void OpenBag()
     {
         isOpen = !isOpen;
-        BagUI.SetActive(isOpen);
+        bagUI.SetActive(isOpen);
     }
 
     public void UpdateSlotHighLight(int index)
     {
-        foreach (var slot in PlayerSlots)
+        foreach (var slot in playerSlots)
         {
             if (slot.IsSelected && slot.SlotIndex == index)
             {

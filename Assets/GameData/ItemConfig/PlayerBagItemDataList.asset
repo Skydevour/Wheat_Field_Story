@@ -53,16 +53,16 @@ MonoBehaviour:
     ItemCount: 0
   - ItemID: 0
     ItemCount: 0
+  - ItemID: 1001
+    ItemCount: 3
   - ItemID: 0
     ItemCount: 0
   - ItemID: 0
     ItemCount: 0
   - ItemID: 0
     ItemCount: 0
-  - ItemID: 0
-    ItemCount: 0
-  - ItemID: 0
-    ItemCount: 0
+  - ItemID: 1002
+    ItemCount: 12
   - ItemID: 0
     ItemCount: 0
   - ItemID: 0

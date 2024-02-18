@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemDetailsList:
   - ItemID: 1001
-    ItemName: "\u82B1\u83DC(\u6D4B\u8BD5\u6570\u636E)"
+    ItemName: Cauliflower
     ItemType: 0
     ItemIcon: {fileID: 21300000, guid: fd9382bd24a0c8d4fb39b2751b96a95d, type: 3}
     ItemBuildIcon: {fileID: 0}
-    ItemDescription: "\u597D\u5403\u7684\u82B1\u83DC"
+    ItemDescription: Delicious cauliflower
     ItemUseRange: 1
     CanPick: 1
     CanDrop: 1
@@ -26,11 +26,11 @@ MonoBehaviour:
     ItemPrice: 100
     SellRate: 0.8
   - ItemID: 1002
-    ItemName: "\u8C46\u8C46(\u6D4B\u8BD5\u6570\u636E)"
+    ItemName: Bean sprouts
     ItemType: 0
     ItemIcon: {fileID: 21300000, guid: add6d306e540ce94e824079d95cf5f99, type: 3}
     ItemBuildIcon: {fileID: 0}
-    ItemDescription: "\u597D\u5403\u7684\u8C46\u8C46"
+    ItemDescription: Delicious bean sprouts
     ItemUseRange: 1
     CanPick: 1
     CanDrop: 1
