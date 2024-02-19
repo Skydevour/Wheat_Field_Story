@@ -90,7 +90,18 @@ public class PlayerBagUI : MonoBehaviour
     private void OpenBag()
     {
         isOpen = !isOpen;
-        bagUI.SetActive(isOpen);
+        if (isOpen)
+        {
+            bagUI.GetComponent<CanvasGroup>().alpha = 1;
+            bagUI.GetComponent<CanvasGroup>().interactable = true;
+            bagUI.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else
+        {
+            bagUI.GetComponent<CanvasGroup>().alpha = 0;
+            bagUI.GetComponent<CanvasGroup>().interactable = false;
+            bagUI.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        }
     }
 
     public void UpdateSlotHighLight(int index)
