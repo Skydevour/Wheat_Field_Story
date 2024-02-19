@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private Image slotImage; // 物品图片
-    [SerializeField] private TextMeshProUGUI slotText; // 物品数量文本
+    [SerializeField] private Text slotText; // 物品数量文本
     [SerializeField] private Button slotButton;
 
     private PlayerBagUI playerBagUI;
@@ -88,15 +88,10 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log(eventData.pointerCurrentRaycast.gameObject);
         playerBagUI.dragItem.enabled = false;
-        if (eventData.pointerCurrentRaycast.gameObject != null)
+        if (eventData.pointerCurrentRaycast.gameObject != null &&
+            eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>() != null)
         {
-            if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>() == null)
-            {
-                return;
-            }
-
             var targetSlot = eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>();
             var targetIndex = targetSlot.SlotIndex;
             if (SlotType == Enums.SlotType.Bag && targetSlot.SlotType == Enums.SlotType.Bag)

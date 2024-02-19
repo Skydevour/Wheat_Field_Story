@@ -77,9 +77,14 @@ public class PlayerBagUI : MonoBehaviour
         if (evt.IsShow)
         {
             itemTip.SetTip(evt.SlotBag.SlotItemDetails, evt.SlotBag.SlotType);
+            // 避免Content layout没有及时自适应，该代码可以强行刷新，使得自适应及时
+            LayoutRebuilder.ForceRebuildLayoutImmediate(itemTip.GetComponent<RectTransform>());
+            itemTip.GetComponent<CanvasGroup>().alpha = 1;
         }
-
-        itemTip.gameObject.SetActive(evt.IsShow);
+        else
+        {
+            itemTip.GetComponent<CanvasGroup>().alpha = 0;
+        }
     }
 
     private void OpenBag()

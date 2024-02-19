@@ -31,8 +31,5 @@ public class ItemTip : MonoBehaviour
         {
             tipBottom.SetActive(false);
         }
-
-        // 避免Content layout没有及时自适应，该代码可以强行刷新，使得自适应及时
-        LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
     }
 }

@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: PlayerBagItemDataList
   m_EditorClassIdentifier: 
   PlayerBagItemDetailsList:
-  - ItemID: 1001
-    ItemCount: 1
   - ItemID: 1002
-    ItemCount: 1
+    ItemCount: 31
+  - ItemID: 0
+    ItemCount: 0
   - ItemID: 1001
-    ItemCount: 1
+    ItemCount: 12
   - ItemID: 0
     ItemCount: 0
-  - ItemID: 0
-    ItemCount: 0
+  - ItemID: 1001
+    ItemCount: 2
   - ItemID: 0
     ItemCount: 0
   - ItemID: 0
