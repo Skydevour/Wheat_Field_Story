@@ -12,6 +12,8 @@ public class PlayerBagUI : MonoBehaviour
     [SerializeField] private Slot[] playerSlots;
     [SerializeField] private ItemTip itemTip;
 
+    public Image dragItem;
+
     private void OnEnable()
     {
         EventCenter.StartListenToEvent<UpdatePlayerBagEvent>(UpdatePlayerBag);

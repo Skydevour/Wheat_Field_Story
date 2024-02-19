@@ -39,6 +39,25 @@ public class PlayerBagManager : MonoSingleton<PlayerBagManager>
         }
     }
 
+    public void SwapItem(int originIndex, int targetIndex)
+    {
+        Data.PlayerBagItemDetails currentItemDetails = PlayerBagItemDataList.PlayerBagItemDetailsList[originIndex];
+        Data.PlayerBagItemDetails targetItemDetails = PlayerBagItemDataList.PlayerBagItemDetailsList[targetIndex];
+        if (targetItemDetails.ItemID != 0)
+        {
+            PlayerBagItemDataList.PlayerBagItemDetailsList[originIndex] = targetItemDetails;
+            PlayerBagItemDataList.PlayerBagItemDetailsList[targetIndex] = currentItemDetails;
+        }
+        else
+        {
+            PlayerBagItemDataList.PlayerBagItemDetailsList[targetIndex] = currentItemDetails;
+            PlayerBagItemDataList.PlayerBagItemDetailsList[originIndex] = new Data.PlayerBagItemDetails();
+        }
+
+        EventCenter.TriggerEvent(new UpdatePlayerBagEvent(Enums.BagLocation.Player,
+            PlayerBagItemDataList.PlayerBagItemDetailsList));
+    }
+
     private void AddItemAtIndex(int itemId, int index, int count)
     {
         // 物品不存在

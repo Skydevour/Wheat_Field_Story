@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IPointerClickHandler
+public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private Image slotImage; // 物品图片
     [SerializeField] private TextMeshProUGUI slotText; // 物品数量文本
@@ -68,5 +68,43 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
         IsSelected = !IsSelected;
         playerBagUI.UpdateSlotHighLight(SlotIndex);
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (SlotAmount > 0)
+        {
+            playerBagUI.dragItem.enabled = true;
+            playerBagUI.dragItem.sprite = slotImage.sprite;
+            IsSelected = true;
+            playerBagUI.UpdateSlotHighLight(SlotIndex);
+        }
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        playerBagUI.dragItem.transform.position = Input.mousePosition;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Debug.Log(eventData.pointerCurrentRaycast.gameObject);
+        playerBagUI.dragItem.enabled = false;
+        if (eventData.pointerCurrentRaycast.gameObject != null)
+        {
+            if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>() == null)
+            {
+                return;
+            }
+
+            var targetSlot = eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>();
+            var targetIndex = targetSlot.SlotIndex;
+            if (SlotType == Enums.SlotType.Bag && targetSlot.SlotType == Enums.SlotType.Bag)
+            {
+                PlayerBagManager.Instance.SwapItem(SlotIndex, targetIndex);
+            }
+
+            playerBagUI.UpdateSlotHighLight(-1);
+        }
     }
 }
