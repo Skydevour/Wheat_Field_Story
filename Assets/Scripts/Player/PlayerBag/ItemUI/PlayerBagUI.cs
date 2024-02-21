@@ -7,10 +7,11 @@ using UnityEngine.UI;
 
 public class PlayerBagUI : MonoBehaviour
 {
-    [SerializeField] private bool isOpen;
     [SerializeField] private GameObject bagUI;
     [SerializeField] private Slot[] playerSlots;
     [SerializeField] private ItemTip itemTip;
+
+    private bool isOpen;
 
     public Image dragItem;
 
@@ -35,7 +36,7 @@ public class PlayerBagUI : MonoBehaviour
             playerSlots[i].SlotIndex = i;
         }
 
-        isOpen = bagUI.activeInHierarchy;
+        isOpen = bagUI.GetComponent<CanvasGroup>().alpha == 1;
     }
 
     private void Update()

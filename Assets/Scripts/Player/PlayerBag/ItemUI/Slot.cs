@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CommonFramework.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -65,8 +66,8 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         {
             return;
         }
-
         IsSelected = !IsSelected;
+        EventCenter.TriggerEvent(new ItemSelectedEvent(SlotItemDetails, IsSelected));
         playerBagUI.UpdateSlotHighLight(SlotIndex);
     }
 
