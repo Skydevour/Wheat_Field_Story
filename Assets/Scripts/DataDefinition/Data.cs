@@ -25,4 +25,34 @@ public class Data
         public int ItemID; // 物品id
         public int ItemCount;
     }
+
+    [System.Serializable]
+    public class SerializableV3
+    {
+        public float X, Y, Z;
+
+        public SerializableV3(Vector3 pos)
+        {
+            X = pos.x;
+            Y = pos.y;
+            Z = pos.z;
+        }
+
+        public Vector3 ToV3()
+        {
+            return new Vector3(X, Y, Z);
+        }
+
+        public Vector2Int ToV2Int()
+        {
+            return new Vector2Int((int)X, (int)Y);
+        }
+    }
+
+    [System.Serializable]
+    public class SceneItem
+    {
+        public int ItemID; // 物品id
+        public SerializableV3 Pos;
+    }
 }
