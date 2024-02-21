@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CommonFramework.Runtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBagManager : MonoSingleton<PlayerBagManager>
 {
@@ -13,6 +14,14 @@ public class PlayerBagManager : MonoSingleton<PlayerBagManager>
     {
         EventCenter.TriggerEvent(new UpdatePlayerBagEvent(Enums.BagLocation.Player,
             PlayerBagItemDataList.PlayerBagItemDetailsList));
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     // 根据物品id，返回对应物品详细列表
@@ -33,6 +42,8 @@ public class PlayerBagManager : MonoSingleton<PlayerBagManager>
         
         var index = GetItemIndex(item.itemId);
         AddItemAtIndex(item.itemId, index, 1);
+        EventCenter.TriggerEvent(new UpdatePlayerBagEvent(Enums.BagLocation.Player,
+            PlayerBagItemDataList.PlayerBagItemDetailsList));
         if (isDelete)
         {
             Destroy(item.gameObject);

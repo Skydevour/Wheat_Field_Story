@@ -11,10 +11,6 @@ public class PlayerBagItem : MonoBehaviour
     public int itemId;
     public Data.ItemDetails itemDetail;
 
-    private void Awake()
-    {
-    }
-
     private void Start()
     {
         // 物品存在
