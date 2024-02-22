@@ -1,5 +1,6 @@
 using System;
 using CommonFramework.Runtime;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,6 +15,11 @@ public class CursorManager : MonoBehaviour
     private Sprite currentCursorSprite;
     private Image cursorImage;
     private RectTransform fadeCanvas;
+    private Camera mainCamera;
+    private Vector3 mouseWorldPos;
+    private Vector3Int mouseGridPos;
+    private Grid currentGrid;
+    private Data.ItemDetails currentItem;
 
     private void OnEnable()
     {
@@ -85,5 +91,61 @@ public class CursorManager : MonoBehaviour
             };
             SetCursorImage(currentCursorSprite);
         }
+    }
+
+    /// <summary>
+    /// 待补充
+    /// </summary>
+    private void CheckCursorUse()
+    {
+        mouseWorldPos =
+            mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
+                Input.mousePosition.z));
+        mouseGridPos = currentGrid.WorldToCell(mouseWorldPos);
+        Data.TileDetails currentTile = new Data.TileDetails();
+        if (currentTile != null)
+        {
+            switch (currentItem.ItemType)
+            {
+                case Enums.ItemType.Commodity:
+                    break;
+                case Enums.ItemType.HoeTool:
+                    if (currentTile.CanDig)
+                    {
+                        SetCursorUse();
+                    }
+                    else
+                    {
+                        SetCursorNotUse();
+                    }
+
+                    break;
+                case Enums.ItemType.WaterTool:
+                    if (currentTile.DaySinceDug > -1 && currentTile.DaySinceWater == -1)
+                    {
+                        SetCursorUse();
+                    }
+                    else
+                    {
+                        SetCursorNotUse();
+                    }
+
+                    break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 待补充
+    /// </summary>
+    private void SetCursorUse()
+    {
+    }
+
+    /// <summary>
+    /// 待补充
+    /// </summary>
+    private void SetCursorNotUse()
+    {
     }
 }

@@ -886,6 +886,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapDataList:
   - {fileID: 11400000, guid: 11ac5acc489655f41aaac2fc397c41cc, type: 2}
+  digTile: {fileID: 11400000, guid: bd9e8bc60bcf50b4894dc5f7950468dd, type: 2}
+  waterTile: {fileID: 11400000, guid: 0d61773b8258e2048a9baee3965840e2, type: 2}
 --- !u!1 &1332806149
 GameObject:
   m_ObjectHideFlags: 3

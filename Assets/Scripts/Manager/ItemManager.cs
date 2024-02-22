@@ -12,17 +12,28 @@ public class ItemManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventCenter.StartListenToEvent<GetSceneAllItemEvent>(GetSceneAllItem);
-        EventCenter.StartListenToEvent<RecreateAllItemsEvent>(RecreateAllItems);
+        EventCenter.StartListenToEvent<BeforeSceneUnLoadEvent>(OnBeforeSceneUnLoadEvent);
+        EventCenter.StartListenToEvent<AfterSceneLoadEvent>(OnAfterSceneLoadEvent);
     }
 
     private void OnDisable()
     {
-        EventCenter.StopListenToEvent<GetSceneAllItemEvent>(GetSceneAllItem);
-        EventCenter.StopListenToEvent<RecreateAllItemsEvent>(RecreateAllItems);
+        EventCenter.StopListenToEvent<BeforeSceneUnLoadEvent>(OnBeforeSceneUnLoadEvent);
+        EventCenter.StopListenToEvent<AfterSceneLoadEvent>(OnAfterSceneLoadEvent);
     }
 
-    private void GetSceneAllItem(GetSceneAllItemEvent evt)
+    private void OnBeforeSceneUnLoadEvent(BeforeSceneUnLoadEvent evt)
+    {
+        GetSceneAllItem();
+    }
+
+    private void OnAfterSceneLoadEvent(AfterSceneLoadEvent evt)
+    {
+        itemParent = GameObject.FindWithTag("ItemParent").transform;
+        RecreateAllItems(itemParent);
+    }
+
+    private void GetSceneAllItem()
     {
         List<Data.SceneItem> currentSceneItem = new List<Data.SceneItem>();
         foreach (var item in FindObjectsOfType<PlayerBagItem>())
@@ -45,9 +56,8 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    private void RecreateAllItems(RecreateAllItemsEvent evt)
+    private void RecreateAllItems(Transform itemParent)
     {
-        itemParent = GameObject.FindWithTag("ItemParent").transform;
         List<Data.SceneItem> currentSceneItem = new List<Data.SceneItem>();
         if (sceneItemDict.TryGetValue(SceneManager.GetActiveScene().name, out currentSceneItem))
         {
