@@ -26,4 +26,12 @@ public class Enums
         Player,
         Box
     }
+
+    public enum TileType
+    {
+        Diggable,
+        DropItem,
+        PlaceFurniture,
+        NPCObstacle
+    }
 }

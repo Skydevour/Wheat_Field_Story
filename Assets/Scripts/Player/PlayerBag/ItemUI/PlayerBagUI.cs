@@ -19,14 +19,12 @@ public class PlayerBagUI : MonoBehaviour
     {
         EventCenter.StartListenToEvent<UpdatePlayerBagEvent>(UpdatePlayerBag);
         EventCenter.StartListenToEvent<ShowItemTipEvent>(ShowTip);
-
     }
 
     private void OnDisable()
     {
         EventCenter.StopListenToEvent<UpdatePlayerBagEvent>(UpdatePlayerBag);
         EventCenter.StopListenToEvent<ShowItemTipEvent>(ShowTip);
-
     }
 
     private void Start()

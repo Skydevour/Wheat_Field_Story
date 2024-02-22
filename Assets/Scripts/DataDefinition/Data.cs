@@ -55,4 +55,27 @@ public class Data
         public int ItemID; // 物品id
         public SerializableV3 Pos;
     }
+
+    [System.Serializable]
+    public class TileDatas
+    {
+        public Vector2Int TilePos;
+        public Enums.TileType TileType;
+        public bool IsUsed;
+    }
+
+    [System.Serializable]
+    public class TileDetails
+    {
+        public int TileGridX, TileGridY;
+        public bool CanDig;
+        public bool CanDrop;
+        public bool CanPlaceFurniture;
+        public bool NPCObstacle;
+        public int DaySinceDug = -1;
+        public int DaySinceWater = -1;
+        public int SeedItemID = -1;
+        public int GrowthDay = -1;
+        public int DaySinceLastHarvest = -1;
+    }
 }
