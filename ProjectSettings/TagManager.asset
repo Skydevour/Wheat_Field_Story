@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - ItemParent
+  - FadeCanvas
   layers:
   - Default
   - TransparentFX

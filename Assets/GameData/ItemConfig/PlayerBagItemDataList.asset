@@ -15,26 +15,26 @@ MonoBehaviour:
   PlayerBagItemDetailsList:
   - ItemID: 1002
     ItemCount: 31
-  - ItemID: 0
-    ItemCount: 0
-  - ItemID: 1001
-    ItemCount: 12
-  - ItemID: 0
-    ItemCount: 0
-  - ItemID: 1001
-    ItemCount: 2
-  - ItemID: 0
-    ItemCount: 0
-  - ItemID: 0
-    ItemCount: 0
-  - ItemID: 0
-    ItemCount: 0
-  - ItemID: 0
-    ItemCount: 0
+  - ItemID: 1003
+    ItemCount: 3
   - ItemID: 1001
     ItemCount: 5
-  - ItemID: 1002
-    ItemCount: 3
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
+  - ItemID: 0
+    ItemCount: 0
   - ItemID: 0
     ItemCount: 0
   - ItemID: 0
