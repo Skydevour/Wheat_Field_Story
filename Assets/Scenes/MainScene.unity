@@ -808,6 +808,7 @@ GameObject:
   - component: {fileID: 1188443646}
   - component: {fileID: 1188443647}
   - component: {fileID: 1188443648}
+  - component: {fileID: 1188443649}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -903,6 +904,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSeason: 0
   TimePause: 0
+--- !u!114 &1188443649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188443642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0a1e1da32600a46b95cead08097963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CropDataList: {fileID: 11400000, guid: 5373e3acf405a7346b7ce9b98a72a829, type: 2}
 --- !u!1 &1332806149
 GameObject:
   m_ObjectHideFlags: 3
