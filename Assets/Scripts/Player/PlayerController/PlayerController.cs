@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using CommonFramework.Runtime;
+using Events.PlayerAnimtionEvents;
 using UnityEngine;
 
 namespace PlayerController
@@ -9,20 +12,49 @@ namespace PlayerController
         [SerializeField] private float playerSpeed;
         [SerializeField] private Animator[] playerAnimators;//人物身上得所有animtor;
         
-        private float inputX;
-        private float inputY;
+        private float inputX;//键盘输入X
+        private float inputY;//键盘输入Y
+        private float mouseX;//根据鼠标位置播放动画
+        private float mouseY;//根据鼠标位置播放动画
         private Vector2 movementInput;//输入得二维向量；
-        private bool isMoving;//是否正在移动；
         
+        private bool isMoving;//是否正在移动；
+        private bool canNotInput;//玩家不能操作
+
+        private void OnEnable()
+        {
+            EventCenter.StartListenToEvent<AfterSceneLoadEvent>(OnAfterSceneLoad);
+            EventCenter.StartListenToEvent<BeforeSceneUnLoadEvent>(OnBeforeSceneUnLoad);
+            EventCenter.StartListenToEvent<PlayerAnimationBeforeExecuteEvent>(OnPlayerAnimationBeforeExecute);
+        }
+
+        private void OnDisable()
+        {
+            EventCenter.StopListenToEvent<AfterSceneLoadEvent>(OnAfterSceneLoad);
+            EventCenter.StopListenToEvent<BeforeSceneUnLoadEvent>(OnBeforeSceneUnLoad);
+            EventCenter.StopListenToEvent<PlayerAnimationBeforeExecuteEvent>(OnPlayerAnimationBeforeExecute);
+        }
+
         void Update()
         {
-            PlayerInput();
+            if (canNotInput==false)
+            {
+                PlayerInput();
+            }
+            else
+            {
+                isMoving = false;
+            }
+            
             SwitchPlayerAnimation();
         }
 
         private void FixedUpdate()
         {
-            Movement();//刚体移动一般放入FixedUpData
+            if (!canNotInput)
+            {
+                Movement();//刚体移动一般放入FixedUpData
+            }
         }
 
         /// <summary>
@@ -67,5 +99,68 @@ namespace PlayerController
                 }
             }
         }
+
+        private IEnumerator UseToolRoutine(Vector3 mouseWorldPos,Data.ItemDetails itemDetails)
+        {
+            canNotInput = true;
+            yield return null;
+            foreach (var playerAnimator in playerAnimators)
+            {
+                playerAnimator.SetTrigger("UseTool");
+                playerAnimator.SetFloat("InputX",mouseX);
+                playerAnimator.SetFloat("InputY",mouseY);
+            }
+
+            yield return new WaitForSeconds(0.45f);
+            EventCenter.TriggerEvent(new ExecuteAfterAnimationEvent(mouseWorldPos,itemDetails));
+            yield return new WaitForSeconds(0.2f);
+            canNotInput = false;
+        }
+
+        #region EventCenter
+
+        private void OnAfterSceneLoad(AfterSceneLoadEvent afterSceneLoadEvent)
+        {
+            canNotInput = false;
+        }
+        
+        private void OnBeforeSceneUnLoad(BeforeSceneUnLoadEvent beforeSceneUnLoadEvent)
+        {
+            canNotInput = true;
+        }
+        
+        /// <summary>
+        /// 物品点击后播放相应动画
+        /// </summary>
+        /// <param name="playerAnimationBeforeExecuteEvent"></param>
+        private void OnPlayerAnimationBeforeExecute(PlayerAnimationBeforeExecuteEvent playerAnimationBeforeExecuteEvent)
+        {
+            if (playerAnimationBeforeExecuteEvent.ItemDetails.ItemType != Enums.ItemType.Seed &&
+                playerAnimationBeforeExecuteEvent.ItemDetails.ItemType != Enums.ItemType.Commodity &&
+                playerAnimationBeforeExecuteEvent.ItemDetails.ItemType != Enums.ItemType.Furniture)
+            {
+                mouseX = playerAnimationBeforeExecuteEvent.MouseWorldPos.x - transform.position.x;
+                mouseY = playerAnimationBeforeExecuteEvent.MouseWorldPos.y - transform.position.y;
+                if (Mathf.Abs(mouseX) > Mathf.Abs(mouseY))
+                {
+                    mouseY = 0;
+                }
+                else
+                {
+                    mouseX = 0;
+                }
+
+                StartCoroutine(UseToolRoutine(playerAnimationBeforeExecuteEvent.MouseWorldPos,
+                    playerAnimationBeforeExecuteEvent.ItemDetails));
+            }
+            else
+            {
+                EventCenter.TriggerEvent(new ExecuteAfterAnimationEvent(playerAnimationBeforeExecuteEvent.MouseWorldPos,
+                    playerAnimationBeforeExecuteEvent.ItemDetails));
+            }
+        }
+
+        #endregion
+
     }
 }
