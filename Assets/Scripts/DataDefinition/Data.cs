@@ -126,4 +126,12 @@ public class Data
         public bool SeedGenerateAtPlayer; // 是否在人物头顶生成
         public bool SeedHasAnimation; // 是否有动画
     }
+
+    [System.Serializable]
+    public class AnimatorType
+    {
+        public Enums.PartName PartName;
+        public Enums.PartType PartType;
+        public AnimatorOverrideController OverrideController;
+    }
 }
