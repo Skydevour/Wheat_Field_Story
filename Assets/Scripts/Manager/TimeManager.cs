@@ -86,6 +86,8 @@ namespace Manager
                                 gameSeason = (Enums.Season)seasonNumber;
                             }
                         }
+
+                        EventCenter.TriggerEvent(new GameDayEvent(gameDay, gameSeason));
                     }
                     EventCenter.TriggerEvent(new GameHourEvent(gameHour, gameDay, gameMonth, gameYear, gameSeason));
                 }

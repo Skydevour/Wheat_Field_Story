@@ -38,14 +38,26 @@ MonoBehaviour:
     ItemPrice: 38
     SellRate: 0.6
   - ItemID: 1003
-    ItemName: "\u6CD5\u6756"
+    ItemName: "\u624B\u65A7"
     ItemType: 4
-    ItemIcon: {fileID: 21300000, guid: f5ddb7abb8f3a5244bc21156b0b942ce, type: 3}
+    ItemIcon: {fileID: 21300000, guid: 467fa1525fa510449956cada50db3172, type: 3}
     ItemBuildIcon: {fileID: 0}
-    ItemDescription: "\u7CBE\u81F4\u6CD5\u6756"
+    ItemDescription: "\u65A7\u5934"
     ItemUseRange: 1
     CanPick: 1
     CanDrop: 1
     CanCarry: 1
     ItemPrice: 38
+    SellRate: 0.6
+  - ItemID: 1004
+    ItemName: "\u4ED9\u5973\u68D2"
+    ItemType: 6
+    ItemIcon: {fileID: 21300000, guid: f5ddb7abb8f3a5244bc21156b0b942ce, type: 3}
+    ItemBuildIcon: {fileID: 0}
+    ItemDescription: "\u7CBE\u81F4\u6CD5\u6756"
+    ItemUseRange: 2
+    CanPick: 0
+    CanDrop: 0
+    CanCarry: 0
+    ItemPrice: 138
     SellRate: 0.6

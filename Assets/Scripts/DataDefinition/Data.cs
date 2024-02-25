@@ -1,9 +1,11 @@
-using System;
 using UnityEngine;
 
 public class Data
 {
-    [Serializable]
+    /// <summary>
+    /// 各个物品基础信息
+    /// </summary>
+    [System.Serializable]
     public class ItemDetails // 物品详细信息
     {
         public int ItemID; // 物品id
@@ -20,14 +22,17 @@ public class Data
         [Range(0, 1)] public float SellRate;
     }
 
-    [Serializable]
+    /// <summary>
+    /// 玩家背包物品信息
+    /// </summary>
+    [System.Serializable]
     public struct PlayerBagItemDetails
     {
         public int ItemID; // 物品id
         public int ItemCount;
     }
 
-    [Serializable]
+    [System.Serializable]
     public class SerializableV3
     {
         public float X, Y, Z;
@@ -50,14 +55,17 @@ public class Data
         }
     }
 
-    [Serializable]
+    [System.Serializable]
     public class SceneItem
     {
         public int ItemID; // 物品id
         public SerializableV3 Pos;
     }
 
-    [Serializable]
+    /// <summary>
+    /// 瓦片坐标信息
+    /// </summary>
+    [System.Serializable]
     public class TileDatas
     {
         public Vector2Int TilePos;
@@ -65,7 +73,10 @@ public class Data
         public bool IsUsed;
     }
 
-    [Serializable]
+    /// <summary>
+    /// 瓦片详细信息
+    /// </summary>
+    [System.Serializable]
     public class TileDetails
     {
         public int TileGridX, TileGridY;
@@ -79,12 +90,40 @@ public class Data
         public int GrowthDay = -1;
         public int DaySinceLastHarvest = -1;
     }
-    
-    [Serializable]
-    public class AnimatorType
+
+    [System.Serializable]
+    public class CropDetails
     {
-        public Enums.PartName PartName;
-        public Enums.PartType PartType;
-        public AnimatorOverrideController OverrideController;
+        public int SeedID;
+        public int[] SeedGrowthDays; // 生长到不同时期对应天数
+
+        public int TotalGrowthDays
+        {
+            get
+            {
+                int amount = 0;
+                foreach (var day in SeedGrowthDays)
+                {
+                    amount += day;
+                }
+
+                return amount;
+            }
+        }
+
+        public GameObject[] SeedGrowthPrefab;
+        public Sprite[] SeedGrowthSprite;
+        public Enums.Season[] SeedSeasons;
+        public int[] SeedHarvestToolID; // 哪些工具能收割
+        public int[] SeedRequireActionCount; // 每个工具对应收割次数
+        public int SeedTransferID; // 转换新物品的ID，树->树状
+        public int[] SeedProductID; // 收割得到的种子id
+        public int[] SeedProductMinAmount; // 收获果实最小数量
+        public int[] SeedProductMaxAmount; // 收获果实最大数量
+        public Vector2 SeedSpawnRadius; // 生成范围
+        public int SeedDaysToRegrow; // 再次生长
+        public int SeedRegrowTimes; // 可生长次数
+        public bool SeedGenerateAtPlayer; // 是否在人物头顶生成
+        public bool SeedHasAnimation; // 是否有动画
     }
 }

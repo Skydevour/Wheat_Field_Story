@@ -9,6 +9,7 @@ TagManager:
   - FadeCanvas
   - Dig
   - Water
+  - CropParent
   layers:
   - Default
   - TransparentFX
