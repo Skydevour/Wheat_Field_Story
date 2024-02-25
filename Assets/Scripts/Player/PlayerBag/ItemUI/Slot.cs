@@ -42,12 +42,17 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         slotButton.interactable = true;
     }
 
+    
+    /// <summary>
+    /// 更新为空格子
+    /// </summary>
     public void UpdateEmptySlot()
     {
         if (IsSelected)
         {
             IsSelected = false;
             playerBagUI.UpdateSlotHighLight(-1);
+            EventCenter.TriggerEvent(new ItemSelectedEvent(SlotItemDetails,IsSelected));
         }
 
         SlotItemDetails = null;
@@ -67,8 +72,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
             return;
         }
         IsSelected = !IsSelected;
-        EventCenter.TriggerEvent(new ItemSelectedEvent(SlotItemDetails, IsSelected));
+        
         playerBagUI.UpdateSlotHighLight(SlotIndex);
+        if (SlotType == Enums.SlotType.Bag)
+        {
+            EventCenter.TriggerEvent(new ItemSelectedEvent(SlotItemDetails, IsSelected));
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)

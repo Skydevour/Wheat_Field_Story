@@ -34,4 +34,14 @@ public class Enums
         PlaceFurniture,
         NPCObstacle
     }
+    
+    public enum PartType//身体部位状态
+    {
+        None,Carry,Hoe,Break
+    }
+    
+    public enum PartName//身体部位名称
+    {
+        Body,Hair,Arm,Tool
+    }
 }

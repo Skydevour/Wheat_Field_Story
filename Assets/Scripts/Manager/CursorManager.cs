@@ -87,6 +87,7 @@ public class CursorManager : MonoBehaviour
                 Enums.ItemType.Commodity => usingItem,
                 Enums.ItemType.ChopTool => usingTool,
                 Enums.ItemType.Seed => usingSeed,
+                Enums.ItemType.HoeTool => usingTool,
                 _ => normalCursor
             };
             SetCursorImage(currentCursorSprite);

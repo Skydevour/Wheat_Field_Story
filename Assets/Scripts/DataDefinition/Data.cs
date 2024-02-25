@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class Data
 {
-    [System.Serializable]
+    [Serializable]
     public class ItemDetails // 物品详细信息
     {
         public int ItemID; // 物品id
@@ -19,14 +20,14 @@ public class Data
         [Range(0, 1)] public float SellRate;
     }
 
-    [System.Serializable]
+    [Serializable]
     public struct PlayerBagItemDetails
     {
         public int ItemID; // 物品id
         public int ItemCount;
     }
 
-    [System.Serializable]
+    [Serializable]
     public class SerializableV3
     {
         public float X, Y, Z;
@@ -49,14 +50,14 @@ public class Data
         }
     }
 
-    [System.Serializable]
+    [Serializable]
     public class SceneItem
     {
         public int ItemID; // 物品id
         public SerializableV3 Pos;
     }
 
-    [System.Serializable]
+    [Serializable]
     public class TileDatas
     {
         public Vector2Int TilePos;
@@ -64,7 +65,7 @@ public class Data
         public bool IsUsed;
     }
 
-    [System.Serializable]
+    [Serializable]
     public class TileDetails
     {
         public int TileGridX, TileGridY;
@@ -77,5 +78,13 @@ public class Data
         public int SeedItemID = -1;
         public int GrowthDay = -1;
         public int DaySinceLastHarvest = -1;
+    }
+    
+    [Serializable]
+    public class AnimatorType
+    {
+        public Enums.PartName PartName;
+        public Enums.PartType PartType;
+        public AnimatorOverrideController OverrideController;
     }
 }
