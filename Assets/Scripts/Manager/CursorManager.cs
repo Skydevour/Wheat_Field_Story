@@ -95,7 +95,7 @@ public class CursorManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 待补充
+    /// 彬哥待补充
     /// </summary>
     private void CheckCursorUse()
     {
@@ -108,6 +108,17 @@ public class CursorManager : MonoBehaviour
         {
             switch (currentItem.ItemType)
             {
+                case Enums.ItemType.Seed:
+                    if (currentTile.DaySinceDug > -1 && currentTile.SeedItemID == -1)
+                    {
+                        SetCursorUse();
+                    }
+                    else
+                    {
+                        SetCursorNotUse();
+                    }
+
+                    break;
                 case Enums.ItemType.Commodity:
                     break;
                 case Enums.ItemType.HoeTool:

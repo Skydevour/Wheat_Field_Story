@@ -15,12 +15,14 @@ public class AnimatorSwitch : MonoBehaviour
    {
       EventCenter.StartListenToEvent<BeforeSceneUnLoadEvent>(OnBeforeSceneUnLoad);
       EventCenter.StartListenToEvent<ItemSelectedEvent>(OnItemSelected);
+      EventCenter.StartListenToEvent<HarvestAtPlayer>(OnHarvestAtPlayer);
    }
 
    private void OnDisable()
    {
       EventCenter.StopListenToEvent<BeforeSceneUnLoadEvent>(OnBeforeSceneUnLoad);
       EventCenter.StopListenToEvent<ItemSelectedEvent>(OnItemSelected);
+      EventCenter.StopListenToEvent<HarvestAtPlayer>(OnHarvestAtPlayer);
    }
 
    private void Awake()
@@ -40,6 +42,19 @@ public class AnimatorSwitch : MonoBehaviour
             animatorsDic[animatorType.PartName.ToString()].runtimeAnimatorController = animatorType.OverrideController;
          }
       }
+   }
+
+   /// <summary>
+   /// 更新物品图片
+   /// </summary>
+   /// <param name="itemSprite"></param>
+   /// <returns></returns>
+   private IEnumerator ShowItem(Sprite itemSprite)
+   {
+      holdItem.sprite = itemSprite;
+      holdItem.enabled = true;
+      yield return new WaitForSeconds(1);
+      holdItem.enabled = false;
    }
 
    #region EventCenter
@@ -87,6 +102,17 @@ public class AnimatorSwitch : MonoBehaviour
       SwitchAnimatorState(currentType);
    }
 
+   /// <summary>
+   /// 在人物头顶生成果实
+   /// </summary>
+   /// <param name="evt"></param>
+   private void OnHarvestAtPlayer(HarvestAtPlayer evt)
+   {
+      Sprite itemSprite = PlayerBagManager.Instance.GetItemDetails(evt.ID).ItemIcon;
+      if (!holdItem.enabled)
+      {
+         StartCoroutine(ShowItem(itemSprite));
+      }
+   }
    #endregion
-
 }

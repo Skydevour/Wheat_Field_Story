@@ -60,7 +60,6 @@ public class TileMapGridManager : MonoSingleton<TileMapGridManager>
             if (tile.Value.DaySinceDug > -1)
             {
                 tile.Value.DaySinceDug++;
-                tile.Value.GrowthDay++;
             }
 
             // 超过5天，地恢复
@@ -69,6 +68,11 @@ public class TileMapGridManager : MonoSingleton<TileMapGridManager>
                 tile.Value.DaySinceDug = -1;
                 tile.Value.CanDig = true;
                 tile.Value.GrowthDay = -1;
+            }
+
+            if (tile.Value.SeedItemID != -1)
+            {
+                tile.Value.GrowthDay++;
             }
         }
 
@@ -134,9 +138,13 @@ public class TileMapGridManager : MonoSingleton<TileMapGridManager>
     /// <param name="itemDetails"></param>
     private void OnExecuteAfterAnimation(Vector3 mouseWorldPos, Data.ItemDetails itemDetails)
     {
-        Data.TileDetails currentTile = new Data.TileDetails();
+        Vector3 mousePos = new Vector3();
+        Data.TileDetails currentTile = new Data.TileDetails(); // 确保我的代码能编译通过，暂时性语句
         switch (itemDetails.ItemType)
         {
+            case Enums.ItemType.Seed:
+                EventCenter.TriggerEvent(new PlantSeedEvent(itemDetails.ItemID, currentTile));
+                break;
             case Enums.ItemType.Commodity:
                 break;
             case Enums.ItemType.HoeTool:
@@ -148,6 +156,9 @@ public class TileMapGridManager : MonoSingleton<TileMapGridManager>
             case Enums.ItemType.WaterTool:
                 SetWaterGround(currentTile);
                 currentTile.DaySinceWater = 0;
+                break;
+            case Enums.ItemType.ReapTool:
+                Crop currentCrop = GetCrop(mousePos);
                 break;
         }
 
@@ -193,6 +204,11 @@ public class TileMapGridManager : MonoSingleton<TileMapGridManager>
             waterTileMap.ClearAllTiles();
         }
 
+        foreach (var crop in FindObjectsOfType<Crop>())
+        {
+            Destroy(crop.gameObject);
+        }
+
         ShowMakerMap(SceneManager.GetActiveScene().name);
     }
 
@@ -213,7 +229,32 @@ public class TileMapGridManager : MonoSingleton<TileMapGridManager>
                 {
                     SetWaterGround(tileDetails);
                 }
+
+                if (tileDetails.SeedItemID > -1)
+                {
+                    EventCenter.TriggerEvent(new PlantSeedEvent(tileDetails.SeedItemID, tileDetails));
+                }
             }
         }
+    }
+
+    /// <summary>
+    /// 获得鼠标位置的Crop信息
+    /// </summary>
+    /// <param name="mousePos"></param>
+    /// <returns></returns>
+    private Crop GetCrop(Vector3 mousePos)
+    {
+        Collider2D[] collider2Ds = Physics2D.OverlapPointAll(mousePos);
+        Crop currentCrop = null;
+        for (int i = 0; i < collider2Ds.Length; i++)
+        {
+            if (collider2Ds[i].GetComponent<Crop>())
+            {
+                currentCrop = collider2Ds[i].GetComponent<Crop>();
+            }
+        }
+
+        return currentCrop;
     }
 }

@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4559584069200970946}
   m_Layer: 0
   m_Name: CropPrefab
-  m_TagString: Item
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,3 +156,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa261a967a964d044ad66f02a00a3e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CropDetails:
+    SeedID: 0
+    SeedGrowthDays: 
+    SeedGrowthPrefab: []
+    SeedGrowthSprite: []
+    SeedSeasons: 
+    SeedHarvestToolID: 
+    SeedRequireActionCount: 
+    SeedTransferID: 0
+    SeedProductID: 
+    SeedProductMinAmount: 
+    SeedProductMaxAmount: 
+    SeedSpawnRadius: {x: 0, y: 0}
+    SeedDaysToRegrow: 0
+    SeedRegrowTimes: 0
+    SeedGenerateAtPlayer: 0
+    SeedHasAnimation: 0

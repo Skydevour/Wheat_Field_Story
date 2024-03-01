@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using CommonFramework.Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,16 @@ public class PlayerBagManager : MonoSingleton<PlayerBagManager>
 {
     public ItemDataList ItemDataList; // 物品数据
     public PlayerBagItemDataList PlayerBagItemDataList; // 背包数据
+
+    private void OnEnable()
+    {
+        EventCenter.StartListenToEvent<HarvestAtPlayer>(OnHarvestAtPlayer);
+    }
+
+    private void OnDisable()
+    {
+        EventCenter.StopListenToEvent<HarvestAtPlayer>(OnHarvestAtPlayer);
+    }
 
     public void Start()
     {
@@ -121,5 +132,13 @@ public class PlayerBagManager : MonoSingleton<PlayerBagManager>
         }
 
         return false;
+    }
+
+    private void OnHarvestAtPlayer(HarvestAtPlayer evt)
+    {
+        var index = GetItemIndex(evt.ID);
+        AddItemAtIndex(evt.ID, index, 1);
+        EventCenter.TriggerEvent(new UpdatePlayerBagEvent(Enums.BagLocation.Player,
+            PlayerBagItemDataList.PlayerBagItemDetailsList));
     }
 }

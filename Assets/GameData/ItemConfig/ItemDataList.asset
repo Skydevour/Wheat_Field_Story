@@ -19,7 +19,7 @@ MonoBehaviour:
     ItemIcon: {fileID: 21300000, guid: fd9382bd24a0c8d4fb39b2751b96a95d, type: 3}
     ItemBuildIcon: {fileID: 0}
     ItemDescription: Delicious cauliflower
-    ItemUseRange: 1
+    ItemUseRange: 4
     CanPick: 1
     CanDrop: 1
     CanCarry: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
     ItemIcon: {fileID: 21300000, guid: add6d306e540ce94e824079d95cf5f99, type: 3}
     ItemBuildIcon: {fileID: 0}
     ItemDescription: Delicious bean sprouts
-    ItemUseRange: 1
+    ItemUseRange: 3
     CanPick: 1
     CanDrop: 1
     CanCarry: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
     ItemIcon: {fileID: 21300000, guid: f5ddb7abb8f3a5244bc21156b0b942ce, type: 3}
     ItemBuildIcon: {fileID: 0}
     ItemDescription: "\u7CBE\u81F4\u6CD5\u6756"
-    ItemUseRange: 2
+    ItemUseRange: 3
     CanPick: 0
     CanDrop: 0
     CanCarry: 0

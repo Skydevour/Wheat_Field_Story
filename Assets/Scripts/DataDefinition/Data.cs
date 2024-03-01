@@ -125,6 +125,19 @@ public class Data
         public int SeedRegrowTimes; // 可生长次数
         public bool SeedGenerateAtPlayer; // 是否在人物头顶生成
         public bool SeedHasAnimation; // 是否有动画
+
+        public int GetToolTotalCount(int toolID)
+        {
+            for (int i = 0; i < SeedHarvestToolID.Length; i++)
+            {
+                if (SeedHarvestToolID[i] == toolID)
+                {
+                    return SeedRequireActionCount[i];
+                }
+            }
+
+            return -1;
+        }
     }
 
     [System.Serializable]

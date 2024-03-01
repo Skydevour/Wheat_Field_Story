@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Crop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Data.TileDetails tileDetails;
+    private int harvestCount;
 
-    // Update is called once per frame
-    void Update()
+    public Data.CropDetails CropDetails;
+
+    public void ProcessTool(Data.ItemDetails tool, Data.TileDetails tile)
     {
-        
+        tileDetails = tile;
+        int requireCount = CropDetails.GetToolTotalCount(tool.ItemID);
+        if (requireCount == -1)
+        {
+            return;
+        }
+
+        if (harvestCount < requireCount)
+        {
+            harvestCount++;
+        }
+
+        if (harvestCount >= requireCount)
+        {
+            if (CropDetails.SeedGenerateAtPlayer)
+            {
+            }
+        }
     }
 }
